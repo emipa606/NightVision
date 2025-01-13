@@ -40,7 +40,7 @@
         <li>None</li>
       </renderSkipFlags>
       <layers>
-        <li>Overhead</li>
+        <li>EyeCover</li>
       </layers>
       <tags>
         <li>IndustrialMilitaryBasic</li>
@@ -128,7 +128,7 @@
         <li>None</li>
       </renderSkipFlags>
       <layers>
-        <li>Overhead</li>
+        <li>EyeCover</li>
       </layers>
       <tags>
         <li>IndustrialMilitaryAdvanced</li>

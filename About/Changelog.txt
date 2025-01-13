@@ -1,5 +1,8 @@
 # Changelog for NightVision
 
+1.5.2 - Changed the goggles to only cover eyes, based on the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2729258885]patch[/url] by Turambar
+
+
 1.5.1 - Updated to 1.5
 Used DeepL to update translations for ChineseSimplified, French, German
 
