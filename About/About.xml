@@ -24,6 +24,8 @@
   <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of drumads mod https://steamcommunity.com/sharedfiles/filedetails/?id=1464989530
 
+- Changed the goggles to only cover eyes, based on the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2729258885]patch[/url] by Turambar
+
 [img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
@@ -138,5 +140,5 @@ And thanks to all the Rimworld modders whose code I've perused and purloined in 
 [/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/3404798880][img]https://img.shields.io/github/v/release/emipa606/NightVision?label=latest%20version&amp;style=plastic&amp;color=9f1111&amp;labelColor=black[/img][/url] | tags:  photosensitivity, night vision</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.2</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.5.3</modVersion>
 </ModMetaData>

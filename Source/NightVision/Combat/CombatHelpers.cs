@@ -143,12 +143,24 @@ public static class CombatHelpers
 
     public static float AdjustCooldownForGlow(float rangedCooldown, Pawn pawn)
     {
+        if (pawn == null)
+        {
+            return rangedCooldown;
+        }
+
         if (pawn.TryGetComp<Comp_NightVision>() is not { } comp)
         {
             return rangedCooldown;
         }
 
-        var glow = pawn.Map.glowGrid.GroundGlowAt(pawn.Position);
+        var glowGrid = pawn.Map?.glowGrid;
+
+        if (glowGrid == null)
+        {
+            return rangedCooldown;
+        }
+
+        var glow = glowGrid.GroundGlowAt(pawn.Position);
 
         if (!glow.GlowIsDarkOrBright())
         {

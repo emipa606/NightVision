@@ -4,6 +4,8 @@
 
 Update of drumads mod https://steamcommunity.com/sharedfiles/filedetails/?id=1464989530
 
+- Changed the goggles to only cover eyes, based on the [patch](https://steamcommunity.com/sharedfiles/filedetails/?id=2729258885) by Turambar
+
 ![Image](https://i.imgur.com/pufA0kM.png)
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)

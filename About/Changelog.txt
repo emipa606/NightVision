@@ -1,5 +1,8 @@
 # Changelog for NightVision
 
+1.5.3 - Fixed compatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1414302321]Numbers[/url]
+
+
 1.5.2 - Changed the goggles to only cover eyes, based on the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2729258885]patch[/url] by Turambar
 
 
