@@ -14,18 +14,18 @@ namespace NightVision;
 public static class CombatHelpers
 {
     [NVSettingsDependentField]
-    public static float _attXCoeff = Settings.CombatStore.HitCurviness.Value / MultiplierCaps.Span;
+    private static float _attXCoeff = Settings.CombatStore.HitCurviness.Value / MultiplierCaps.Span;
 
-    [NVSettingsDependentField] public static float _rangedCooldownMultiplierBad;
-    [NVSettingsDependentField] public static float _rangedCooldownMultiplierGood;
-
-    [NVSettingsDependentField]
-    public static float _dodgeXCoeff = Settings.CombatStore.DodgeCurviness.Value / MultiplierCaps.Span;
+    [NVSettingsDependentField] private static float _rangedCooldownMultiplierBad;
+    [NVSettingsDependentField] private static float _rangedCooldownMultiplierGood;
 
     [NVSettingsDependentField]
-    public static float _chanceOfSurpriseAttFactor = Settings.CombatStore.SurpriseAttackMultiplier.Value;
+    private static float _dodgeXCoeff = Settings.CombatStore.DodgeCurviness.Value / MultiplierCaps.Span;
 
-    public static FloatRange MultiplierCaps => Settings.Store.MultiplierCaps;
+    [NVSettingsDependentField]
+    private static float _chanceOfSurpriseAttFactor = Settings.CombatStore.SurpriseAttackMultiplier.Value;
+
+    private static FloatRange MultiplierCaps => Settings.Store.MultiplierCaps;
 
     public static float DodgeXCoeff
     {
@@ -94,7 +94,7 @@ public static class CombatHelpers
         set => _rangedCooldownMultiplierBad = value;
     }
 
-    public static float RangedCooldownMultiplierGood
+    private static float RangedCooldownMultiplierGood
     {
         get
         {

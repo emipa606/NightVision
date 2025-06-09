@@ -11,18 +11,20 @@ namespace NightVision;
 
 public partial class Initialiser
 {
-    public void FindAllValidApparel()
+    private void FindAllValidApparel()
     {
         var headgearCategoryDef = ThingCategoryDef.Named("Headgear");
         var fullHead = Defs_Rimworld.Head;
         var eyes = Defs_Rimworld.Eyes;
 
         var allEyeCoveringHeadgearDefs = new HashSet<ThingDef>(
-            DefDatabase<ThingDef>.AllDefsListForReading.FindAll(
-                def => def.IsApparel
-                       && ((def.thingCategories?.Contains(headgearCategoryDef) ?? false)
-                           || def.apparel.bodyPartGroups.Any(bpg => bpg == eyes || bpg == fullHead)
-                           || def.HasComp(typeof(Comp_NightVisionApparel)))
+            DefDatabase<ThingDef>.AllDefsListForReading.FindAll(def => def.IsApparel
+                                                                       && ((def.thingCategories?.Contains(
+                                                                               headgearCategoryDef) ?? false)
+                                                                           || def.apparel.bodyPartGroups.Any(bpg =>
+                                                                               bpg == eyes || bpg == fullHead)
+                                                                           || def.HasComp(
+                                                                               typeof(Comp_NightVisionApparel)))
             )
         );
         var nvApparel = Settings.Store.NVApparel ?? new Dictionary<ThingDef, ApparelVisionSetting>();

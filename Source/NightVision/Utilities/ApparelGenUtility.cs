@@ -8,16 +8,16 @@ namespace NightVision;
 [NVHasSettingsDependentField]
 public static class ApparelGenUtility
 {
-    public static Lookup<string, ThingDef> NullPSApparelDefsByTag;
+    private static Lookup<string, ThingDef> NullPSApparelDefsByTag;
 
-    [NVSettingsDependentField] public static TriBool AnyNullPSApparelExists = TriBool.Undefined;
+    [NVSettingsDependentField] private static TriBool AnyNullPSApparelExists = TriBool.Undefined;
 
 
-    public static Lookup<string, ThingDef> GiveNVApparelDefsByTag;
+    private static Lookup<string, ThingDef> GiveNVApparelDefsByTag;
 
-    [NVSettingsDependentField] public static TriBool AnyGiveNVApparelExists = TriBool.Undefined;
+    [NVSettingsDependentField] private static TriBool AnyGiveNVApparelExists = TriBool.Undefined;
 
-    public static void BuildNullPSApparelLookup()
+    private static void BuildNullPSApparelLookup()
     {
         var nvApparel = Settings.Store.NVApparel;
 
@@ -61,7 +61,7 @@ public static class ApparelGenUtility
         return null;
     }
 
-    public static void BuildGiveNVApparelLookup()
+    private static void BuildGiveNVApparelLookup()
     {
         var nvApparel = Settings.Store.NVApparel;
 

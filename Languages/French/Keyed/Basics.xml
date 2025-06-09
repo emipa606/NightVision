@@ -72,4 +72,7 @@
   <NVBionic>Est un bionique {0}</NVBionic>
   <NVPartEfficiency>l'efficacité</NVPartEfficiency>
   <NVCapMods>Modificateurs de capacité :</NVCapMods>
+  <!-- Change to using RW language tags in misc -->
+  <!--<NVHediffExplained>The conditions listed here are limited to those that are applied directly to the eye, or explicitly affect sight, or have particular modded files.</NVHediffExplained> -->
+  <!-- Latin name -->
 </LanguageData>

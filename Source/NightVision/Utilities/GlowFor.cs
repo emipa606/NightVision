@@ -14,8 +14,8 @@ namespace NightVision;
 public static class GlowFor
 {
     // cache last value as repeated requests are common
-    public static int cachedPawnHash;
-    public static Comp_NightVision cachedComp;
+    private static int cachedPawnHash;
+    private static Comp_NightVision cachedComp;
 
     /// <summary>
     ///     Gets the glow at the given thing's position or a trivial fallback

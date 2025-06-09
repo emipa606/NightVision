@@ -13,11 +13,11 @@ namespace NightVision;
 [UsedImplicitly]
 public class NVStatWorker_RangedCooldown : NVStatWorker
 {
-    public readonly SkillDef DerivedFrom = Defs_Rimworld.ShootSkill;
+    private readonly SkillDef DerivedFrom = Defs_Rimworld.ShootSkill;
 
     public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
     {
-        if (req.Thing is not Pawn pawn)
+        if (req.Thing is not Pawn pawn || ModLister.BiotechInstalled && pawn.genes.HasActiveGene(DarkVision))
         {
             return string.Empty;
         }
@@ -35,7 +35,7 @@ public class NVStatWorker_RangedCooldown : NVStatWorker
 
     public override float GetValueUnfinalized(StatRequest req, bool applyPostProcess = true)
     {
-        if (req.Thing is not Pawn pawn)
+        if (req.Thing is not Pawn pawn || ModLister.BiotechInstalled && pawn.genes.HasActiveGene(DarkVision))
         {
             return Constants.TRIVIAL_FACTOR;
         }

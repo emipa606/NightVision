@@ -20,11 +20,7 @@ public class RaceTab
     {
         var raceCount = Settings.Store.RaceLightMods.Count;
 
-        if (_numberOfCustomRaces == null)
-        {
-            _numberOfCustomRaces =
-                Settings.Store.RaceLightMods.Count(rlm => rlm.Value.IntSetting == VisionType.NVCustom);
-        }
+        _numberOfCustomRaces ??= Settings.Store.RaceLightMods.Count(rlm => rlm.Value.IntSetting == VisionType.NVCustom);
 
         inRect = inRect.AtZero();
         SettingsHelpers.DrawLightModifiersHeader(ref inRect, "NVRaces".Translate(), "NVRaceNote".Translate());

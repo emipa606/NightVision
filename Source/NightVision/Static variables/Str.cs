@@ -26,11 +26,11 @@ public static class Str
     public static readonly string Darkness = "NightVisionDarkness".Translate();
     public static readonly string Bright = "NightVisionBright".Translate();
 
-    public static readonly string Effect = "NVEffects".Translate();
+    private static readonly string Effect = "NVEffects".Translate();
 
-    public static readonly string NightVision = VisionType.NVNightVision.ToString().Translate();
+    public static readonly string NightVision = nameof(VisionType.NVNightVision).Translate();
 
-    public static readonly string Photosens = VisionType.NVPhotosensitivity.ToString().Translate();
+    public static readonly string Photosens = nameof(VisionType.NVPhotosensitivity).Translate();
 
     public static readonly string FullLabel =
         "NVFullLabel".Translate() + " = {0:+#;-#;0}%";

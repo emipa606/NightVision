@@ -6,7 +6,7 @@ namespace NightVision;
 
 public static class FieldClearer
 {
-    public static List<Traverse> SettingsDependentFieldTraverses = [];
+    private static List<Traverse> SettingsDependentFieldTraverses = [];
 
     public static void FindSettingsDependentFields()
     {

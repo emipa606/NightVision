@@ -25,7 +25,8 @@ public static class StatPartGlow_ActiveFor
             return;
         }
 
-        if (t is Pawn pawn && pawn.TryGetComp<Comp_NightVision>() != null)
+        if (t is Pawn pawn && pawn.TryGetComp<Comp_NightVision>() != null &&
+            (!ModLister.BiotechInstalled || !pawn.genes.HasActiveGene(NVStatWorker.DarkVision)))
         {
             __result = true;
         }

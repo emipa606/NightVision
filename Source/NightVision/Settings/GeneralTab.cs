@@ -6,7 +6,7 @@ namespace NightVision;
 
 public class GeneralTab
 {
-    private readonly Stopwatch confirmTimer = new Stopwatch();
+    private readonly Stopwatch confirmTimer = new();
     private bool _askToConfirmReset;
 
     public void Clear()

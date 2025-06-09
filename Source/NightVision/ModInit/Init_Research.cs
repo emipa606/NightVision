@@ -11,7 +11,7 @@ namespace NightVision;
 public partial class Initialiser
 {
     //Adds a marker to research projects that unlock NV stuff so people know how cool I am
-    public void AddNightVisionMarkerToVanillaResearch()
+    private void AddNightVisionMarkerToVanillaResearch()
     {
         var complexClothing = ResearchProjectDef.Named("ComplexClothing");
         var microelectronics = ResearchProjectDef.Named("MicroelectronicsBasics");

@@ -18,7 +18,7 @@ public class ApparelVisionSetting : IExposable, ISaveCheck
 
     //Settings in xml defs
     public bool CompNullifiesPS;
-    public CompProperties_NightVisionApparel CompProps;
+    private CompProperties_NightVisionApparel CompProps;
     public bool GrantsNV;
 
     //Current Settings
@@ -27,7 +27,7 @@ public class ApparelVisionSetting : IExposable, ISaveCheck
 
     //Corresponding ThingDef
 
-    public ThingDef ParentDef;
+    private ThingDef ParentDef;
 
     //Flags settings
     private ApparelFlags SettingsFlags;

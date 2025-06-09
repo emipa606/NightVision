@@ -23,11 +23,7 @@ public class HediffTab
         var store = Settings.Store;
         var hediffcount = cache.GetAllHediffs.Count;
 
-        if (_numberOfCustomHediffs == null)
-        {
-            _numberOfCustomHediffs =
-                store.HediffLightMods.Count(hlm => hlm.Value.IntSetting == VisionType.NVCustom);
-        }
+        _numberOfCustomHediffs ??= store.HediffLightMods.Count(hlm => hlm.Value.IntSetting == VisionType.NVCustom);
 
         inRect = inRect.AtZero();
 

@@ -208,10 +208,7 @@ public class Hediff_LightModifiers : LightModifiersBase
         }
         else
         {
-            if (_parentDef.comps == null)
-            {
-                _parentDef.comps = [];
-            }
+            _parentDef.comps ??= [];
 
             _hediffCompProps = new HediffCompProperties_NightVision { LightModifiers = this };
             _parentDef.comps.Add(_hediffCompProps);

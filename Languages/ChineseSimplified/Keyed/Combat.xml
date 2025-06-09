@@ -22,4 +22,5 @@
   <NightVisionRangedCooldown>目前（{0}点亮，射击技能{1}）：{2}</NightVisionRangedCooldown>
   <NightVisionRangedCooldownDemo>在{0}光下： {1}</NightVisionRangedCooldownDemo>
   <NightVisionAimFactorFromLight>目标 {0} 点燃 x{1}</NightVisionAimFactorFromLight>
+  <!--Shot tooltip-->
 </LanguageData>

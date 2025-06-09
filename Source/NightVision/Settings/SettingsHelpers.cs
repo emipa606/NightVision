@@ -20,7 +20,7 @@ public static class SettingsHelpers
         get
             => _tipStringHolder
                ?? (_tipStringHolder = new Dictionary<Def, string>());
-        set => _tipStringHolder = value;
+        private set => _tipStringHolder = value;
     }
 
     public static float ModToMultiPercent(
@@ -141,15 +141,12 @@ public static class SettingsHelpers
         );
     }
 
-    public static string GetTipString(
+    private static string GetTipString(
         Def def,
         LightModifiersBase lightModifiers
     )
     {
-        if (TipStringHolder == null)
-        {
-            TipStringHolder = new Dictionary<Def, string>();
-        }
+        TipStringHolder ??= new Dictionary<Def, string>();
 
         if (TipStringHolder.TryGetValue(def, out var tip))
         {
@@ -195,7 +192,7 @@ public static class SettingsHelpers
         return result;
     }
 
-    public static string DefaultValuesLine(float[] offsets, bool addBaseValues)
+    private static string DefaultValuesLine(float[] offsets, bool addBaseValues)
     {
         var zeroValue = offsets[0];
         var fullValue = offsets[1];

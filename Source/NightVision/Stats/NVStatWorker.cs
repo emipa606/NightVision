@@ -15,14 +15,16 @@ public class NVStatWorker : StatWorker
 
     protected StatDef Stat => stat;
 
+    public static GeneDef DarkVision => DefDatabase<GeneDef>.GetNamedSilentFail("DarkVision");
+
 
     public override string GetExplanationUnfinalized(
         StatRequest req,
         ToStringNumberSense numberSense
     )
     {
-        if (req.Thing is Pawn pawn
-            && pawn.TryGetComp<Comp_NightVision>() is { } comp)
+        if (req.Thing is Pawn pawn && pawn.TryGetComp<Comp_NightVision>() is { } comp &&
+            (!ModLister.BiotechInstalled || !pawn.genes.HasActiveGene(DarkVision)))
         {
             return StatReportFor_NightVision.CompleteStatReport(Stat, StatEffectMask, comp, Glow);
         }
@@ -50,8 +52,8 @@ public class NVStatWorker : StatWorker
         bool applyPostProcess = true
     )
     {
-        if (req.Thing is Pawn pawn
-            && pawn.TryGetComp<Comp_NightVision>() is { } comp)
+        if (req.Thing is Pawn pawn && pawn.TryGetComp<Comp_NightVision>() is { } comp &&
+            (!ModLister.BiotechInstalled || !pawn.genes.HasActiveGene(DarkVision)))
         {
             return comp.FactorFromGlow(Glow);
         }
@@ -59,11 +61,10 @@ public class NVStatWorker : StatWorker
         return DefaultStatValue;
     }
 
-    public override bool IsDisabledFor(
-        Thing thing
-    )
+    public override bool IsDisabledFor(Thing thing)
     {
-        return thing is not Pawn pawn || pawn.TryGetComp<Comp_NightVision>() == null;
+        return thing is not Pawn pawn || pawn.TryGetComp<Comp_NightVision>() == null ||
+               ModLister.BiotechInstalled && pawn.genes.HasActiveGene(DarkVision);
     }
 
     public override bool ShouldShowFor(StatRequest req)

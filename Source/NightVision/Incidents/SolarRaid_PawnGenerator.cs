@@ -43,7 +43,7 @@ public static class SolarRaid_PawnGenerator
     }
 
 
-    public static void GeneratePawns(PawnGroupMakerParms parms, PawnGroupMaker groupMaker, List<Pawn> outPawns)
+    private static void GeneratePawns(PawnGroupMakerParms parms, PawnGroupMaker groupMaker, List<Pawn> outPawns)
     {
         var canBringFood = parms.raidStrategy?.pawnsCanBringFood ?? true;
 
@@ -107,7 +107,7 @@ public static class SolarRaid_PawnGenerator
         }
     }
 
-    public static void PawnFinaliser(Pawn pawn)
+    private static void PawnFinaliser(Pawn pawn)
     {
         var meleeSkill = pawn.skills.GetSkill(Defs_Rimworld.MeleeSkill).Level;
 

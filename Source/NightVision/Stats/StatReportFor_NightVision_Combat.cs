@@ -12,7 +12,7 @@ namespace NightVision;
 
 public static class StatReportFor_NightVision_Combat
 {
-    public static bool ShowMeleeEffectsForPawn(Pawn pawn)
+    private static bool ShowMeleeEffectsForPawn(Pawn pawn)
     {
         if (!Settings.CombatStore.MeleeHitEffectsEnabled.Value)
         {
@@ -27,7 +27,7 @@ public static class StatReportFor_NightVision_Combat
         return true;
     }
 
-    public static bool ShowRangedEffectsForPawn(Pawn pawn)
+    private static bool ShowRangedEffectsForPawn(Pawn pawn)
     {
         if (pawn?.story != null)
         {

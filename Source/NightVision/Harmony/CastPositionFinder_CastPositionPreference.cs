@@ -17,7 +17,7 @@ namespace NightVision.Harmony;
 [HarmonyPatch(typeof(CastPositionFinder), "CastPositionPreference")]
 public static class CastPositionFinder_CastPositionPreference
 {
-    public static readonly float GlowCoverCoefficient = 0.5f;
+    private static readonly float GlowCoverCoefficient = 0.5f;
 
 
     public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

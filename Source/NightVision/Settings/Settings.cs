@@ -72,54 +72,39 @@ public class Settings : ModSettings
 
     private List<TabRecord> GenerateTabs()
     {
-        if (_generalTab == null)
-        {
-            _generalTab = new GeneralTab();
-        }
+        _generalTab ??= new GeneralTab();
 
-        if (_combatTab == null)
-        {
-            _combatTab = new CombatTab();
-        }
+        _combatTab ??= new CombatTab();
 
-        if (_raceTab == null)
-        {
-            _raceTab = new RaceTab();
-        }
+        _raceTab ??= new RaceTab();
 
-        if (_apparelTab == null)
-        {
-            _apparelTab = new ApparelTab();
-        }
+        _apparelTab ??= new ApparelTab();
 
-        if (_hediffTab == null)
-        {
-            _hediffTab = new HediffTab();
-        }
+        _hediffTab ??= new HediffTab();
 
         var tabsList = new List<TabRecord>
         {
-            new TabRecord(
+            new(
                 "NVGeneralTab".Translate(),
                 delegate { _tab = Tab.General; },
                 () => _tab == Tab.General
             ),
-            new TabRecord(
+            new(
                 "NVCombat".Translate(),
                 delegate { _tab = Tab.Combat; },
                 () => _tab == Tab.Combat
             ),
-            new TabRecord(
+            new(
                 "NVRaces".Translate(),
                 delegate { _tab = Tab.Races; },
                 () => _tab == Tab.Races
             ),
-            new TabRecord(
+            new(
                 "NVApparel".Translate(),
                 delegate { _tab = Tab.Apparel; },
                 () => _tab == Tab.Apparel
             ),
-            new TabRecord(
+            new(
                 "NVHediffs".Translate(),
                 delegate { _tab = Tab.Bionics; },
                 () => _tab == Tab.Bionics
@@ -132,10 +117,7 @@ public class Settings : ModSettings
             return tabsList;
         }
 
-        if (_debugTab == null)
-        {
-            _debugTab = new DebugTab();
-        }
+        _debugTab ??= new DebugTab();
 
         tabsList.Add(
             new TabRecord(

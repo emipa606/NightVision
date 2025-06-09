@@ -36,7 +36,7 @@ public static class ThoughtWorkerDark_CurrentStateInternal
 
                 __result = ThoughtState.ActiveAtStage(
                     PhotosensDarkThoughtStage,
-                    VisionType.NVPhotosensitivity.ToString().Translate()
+                    nameof(VisionType.NVPhotosensitivity).Translate()
                 );
 
                 return;

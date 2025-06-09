@@ -37,7 +37,7 @@ public class Storage_Combat
     }
 
 
-    private static IntRange LinkedRangedCooldownMinAndMax => new IntRange(
+    private static IntRange LinkedRangedCooldownMinAndMax => new(
         (int)(100 / Settings.Store.MultiplierCaps.max),
         (int)(100 / Settings.Store.MultiplierCaps.min));
 

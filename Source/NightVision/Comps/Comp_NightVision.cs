@@ -17,7 +17,7 @@ public class Comp_NightVision : ThingComp
 {
     public readonly float[] HediffMods = new float[2];
     public readonly float[] NvhediffMods = new float[2];
-    public readonly Dictionary<string, List<HediffDef>> PawnsNVHediffs = new Dictionary<string, List<HediffDef>>();
+    public readonly Dictionary<string, List<HediffDef>> PawnsNVHediffs = new();
     public readonly float[] PshediffMods = new float[2];
     private bool _apparelNeedsChecking;
     private float _fullLightModifier = -1;
@@ -29,7 +29,7 @@ public class Comp_NightVision : ThingComp
 
     private int _numRemainingEyes = -1;
     private List<Hediff> _pawnsHediffs;
-    public List<BodyPartRecord> _raceSightParts;
+    private List<BodyPartRecord> _raceSightParts;
     private float _zeroLightModifier = -1;
     public bool ApparelGrantsNV;
     public bool ApparelNullsPS;
@@ -79,13 +79,13 @@ public class Comp_NightVision : ThingComp
 
     public bool CanCheat => Props.CanCheat;
 
-    public int TicksSinceLastDark => Find.TickManager.TicksGame - LastDarkTick;
+    private int TicksSinceLastDark => Find.TickManager.TicksGame - LastDarkTick;
 
     [UsedImplicitly] public CompProperties_NightVision Props => (CompProperties_NightVision)props;
 
     public Pawn ParentPawn => _intParentPawn ?? (_intParentPawn = parent as Pawn);
 
-    public List<Hediff> PawnHediffs =>
+    private List<Hediff> PawnHediffs =>
         _pawnsHediffs ?? (_pawnsHediffs = ParentPawn?.health?.hediffSet?.hediffs);
 
     public int EyeCount => RaceSightParts.Count;
@@ -131,7 +131,7 @@ public class Comp_NightVision : ThingComp
 
             return _numRemainingEyes;
         }
-        set => _numRemainingEyes = value < 0 ? 0 : value;
+        private set => _numRemainingEyes = value < 0 ? 0 : value;
     }
 
     public float ZeroLightModifier
@@ -211,10 +211,7 @@ public class Comp_NightVision : ThingComp
     {
         get
         {
-            if (DarknessPsych == null)
-            {
-                DarknessPsych = Classifier.ClassifyModifier(ZeroLightModifier, true);
-            }
+            DarknessPsych ??= Classifier.ClassifyModifier(ZeroLightModifier, true);
 
             return (VisionType)DarknessPsych;
         }
@@ -228,10 +225,7 @@ public class Comp_NightVision : ThingComp
     {
         get
         {
-            if (BrightLightPsych == null)
-            {
-                BrightLightPsych = Classifier.ClassifyModifier(FullLightModifier, false);
-            }
+            BrightLightPsych ??= Classifier.ClassifyModifier(FullLightModifier, false);
 
             return TicksSinceLastDark > Constants.THOUGHT_ACTIVE_TICKS_PAST
                    && BrightLightPsych == VisionType.NVPhotosensitivity;
@@ -299,11 +293,11 @@ public class Comp_NightVision : ThingComp
         UpdateComp();
     }
 
-    private bool UpdateComp()
+    private void UpdateComp()
     {
         if (!ParentPawn.Spawned || ParentPawn.Dead)
         {
-            return false;
+            return;
         }
 
         if (_apparelNeedsChecking)
@@ -329,7 +323,6 @@ public class Comp_NightVision : ThingComp
         }
 
         ClearPsych();
-        return true;
     }
 
     //Note: we don't save this comp so this only gets called when spawning new pawn, I think

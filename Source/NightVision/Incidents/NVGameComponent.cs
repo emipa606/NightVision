@@ -16,7 +16,7 @@ public class NVGameComponent : GameComponent
 
     public static bool FlareRaidIsEnabled = true;
 
-    public SolarRaid_StoryWorker SolarRaidStoryWorker;
+    private SolarRaid_StoryWorker SolarRaidStoryWorker;
 
     public NVGameComponent(Game game)
     {

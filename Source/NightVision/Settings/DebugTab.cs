@@ -28,7 +28,7 @@ public class DebugTab
         var playing = Current.ProgramState == ProgramState.Playing;
         inRect = inRect.AtZero();
         Text.Font = GameFont.Tiny;
-        float listingY = default;
+        float listingY = 0;
         var rowRect = new Rect(
             inRect.width * 0.05f,
             (inRect.height * 0.05f) + listingY,
@@ -107,10 +107,7 @@ public class DebugTab
             return;
         }
 
-        if (_allPawns == null)
-        {
-            _allPawns = PawnsFinder.AllMaps_Spawned.Where(pwn => pwn.RaceProps.Humanlike).ToList();
-        }
+        _allPawns ??= PawnsFinder.AllMaps_Spawned.Where(pwn => pwn.RaceProps.Humanlike).ToList();
 
         float height;
 
@@ -119,9 +116,8 @@ public class DebugTab
             height = (25 * _allPawns.Count)
                      + (200
                         * _allPawns
-                            .FindAll(
-                                pawn => pawn.TryGetComp<Comp_NightVision>()
-                                        != null
+                            .FindAll(pawn => pawn.TryGetComp<Comp_NightVision>()
+                                             != null
                             )
                             .Count);
         }

@@ -19,7 +19,7 @@ public class SettingsCache
 
     [CanBeNull] private List<ThingDef> _headgearCache;
 
-    public bool CacheInited;
+    private bool CacheInited;
 
     public float? MaxCache;
 
@@ -181,7 +181,7 @@ public class SettingsCache
     /// <summary>
     ///     So that the comps will update with the new settings, sets all the comps dirty
     /// </summary>
-    public void SetDirtyAllComps()
+    private void SetDirtyAllComps()
     {
         foreach (var pawn in PawnsFinder.AllMaps_Spawned)
         {

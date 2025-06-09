@@ -22,4 +22,5 @@
   <NightVisionRangedCooldown>Derzeit ({0} beleuchtet, Schießfertigkeit {1}): {2}</NightVisionRangedCooldown>
   <NightVisionRangedCooldownDemo>Bei {0} Licht: {1}</NightVisionRangedCooldownDemo>
   <NightVisionAimFactorFromLight>Ziel {0} lit x{1}</NightVisionAimFactorFromLight>
+  <!--Shot tooltip-->
 </LanguageData>

@@ -6,21 +6,20 @@ namespace NightVision;
 
 public class SolarRaid_StoryWorker
 {
-    public static readonly int MinTicksLeftToFireInc = 2500;
+    private static readonly int MinTicksLeftToFireInc = 2500;
     public static int MinTicksPassedToFire = 2500;
     public static readonly IncidentDef FlareRaidDef = IncidentDef.Named("FlareRaid");
-    public static readonly double MaxSunGlowForRaid = 0.2;
+    private static readonly double MaxSunGlowForRaid = 0.2;
     public int GlobalLastFireTick = -1;
-    public int LastFlareStartTick = -1;
-    public int QueuedFiringTick = -1;
-    public int QueuedMapID = -1;
+    private int LastFlareStartTick = -1;
+    private int QueuedFiringTick = -1;
+    private int QueuedMapID = -1;
 
     public void TickCheckForFlareRaid()
     {
         if (!NVGameComponent.FlareRaidIsEnabled
-            || Find.Scenario.AllParts.Any(
-                scenPart => scenPart is ScenPart_DisableIncident scenPartDisable &&
-                            scenPartDisable.Incident == FlareRaidDef
+            || Find.Scenario.AllParts.Any(scenPart => scenPart is ScenPart_DisableIncident scenPartDisable &&
+                                                      scenPartDisable.Incident == FlareRaidDef
             ))
         {
             return;
@@ -159,7 +158,7 @@ public class SolarRaid_StoryWorker
         }
     }
 
-    public void TryFireFlareRaid(Map map)
+    private void TryFireFlareRaid(Map map)
     {
         //int ticksGame = Find.TickManager.TicksGame;
 
@@ -183,7 +182,7 @@ public class SolarRaid_StoryWorker
         Find.Storyteller.TryFire(new FiringIncident(FlareRaidDef, null, newParms));
     }
 
-    public int[] CalcPotentialHoursToFire(Map map, int flareTicks, ref int hourCount)
+    private int[] CalcPotentialHoursToFire(Map map, int flareTicks, ref int hourCount)
     {
         var currentTick = Find.TickManager.TicksAbs;
 

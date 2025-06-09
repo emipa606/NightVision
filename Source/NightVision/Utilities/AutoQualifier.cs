@@ -17,21 +17,19 @@ public static class AutoQualifier
     {
         if (hediffDef.addedPartProps is { } abpp
             && (abpp.partEfficiency > 1.0f
-                || hediffDef.stages?.Exists(
-                    stage => stage.capMods?.Exists(
-                                 pcm
-                                     =>
-                                     pcm
-                                         .capacity
-                                     == PawnCapacityDefOf
-                                         .Sight
-                                     && (!pcm.SetMaxDefined
-                                         || pcm.setMax > 1.0001)
-                                     && (pcm.offset
-                                         > 0.0001
-                                         || pcm.postFactor > 1.0001)
-                             )
-                             == true
+                || hediffDef.stages?.Exists(stage => stage.capMods?.Exists(pcm
+                                                         =>
+                                                         pcm
+                                                             .capacity
+                                                         == PawnCapacityDefOf
+                                                             .Sight
+                                                         && (!pcm.SetMaxDefined
+                                                             || pcm.setMax > 1.0001)
+                                                         && (pcm.offset
+                                                             > 0.0001
+                                                             || pcm.postFactor > 1.0001)
+                                                     )
+                                                     == true
                 )
                 == true))
 

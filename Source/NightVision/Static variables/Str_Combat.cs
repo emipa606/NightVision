@@ -13,7 +13,7 @@ namespace NightVision;
 /// </summary>
 public static class Str_Combat
 {
-    public const char NumSpace = '\u2007';
+    private const char NumSpace = '\u2007';
 
     public static readonly string LMDef = "NightVisionLMDef".Translate();
 

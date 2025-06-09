@@ -13,7 +13,7 @@ namespace NightVision;
 
 public class LightModifiersBase : IExposable, ISaveCheck
 {
-    public static LightModifiersBase NVLightModifiers = new LightModifiersBase
+    public static LightModifiersBase NVLightModifiers = new()
     {
         Offsets =
         [
@@ -23,7 +23,7 @@ public class LightModifiersBase : IExposable, ISaveCheck
         Initialised = true
     };
 
-    public static LightModifiersBase PSLightModifiers = new LightModifiersBase
+    public static LightModifiersBase PSLightModifiers = new()
     {
         Offsets =
         [
@@ -221,7 +221,7 @@ public class LightModifiersBase : IExposable, ISaveCheck
         return Math.Abs(this[0]) > 0.001 || Math.Abs(this[1]) > 0.001;
     }
 
-    public bool HasAnyCustomModifier()
+    private bool HasAnyCustomModifier()
     {
         return Math.Abs(Offsets[0]) > 0.001 || Math.Abs(Offsets[1]) > 0.001;
     }

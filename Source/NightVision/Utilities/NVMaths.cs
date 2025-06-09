@@ -4,7 +4,7 @@ namespace NightVision;
 
 public static class NVMaths
 {
-    public static float ClampMod(float cap, float mod)
+    private static float ClampMod(float cap, float mod)
     {
         if (mod > cap != mod > 0)
         {

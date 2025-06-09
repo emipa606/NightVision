@@ -12,10 +12,10 @@ namespace NightVision;
 
 public class HediffCompProperties_NightVision : HediffCompProperties
 {
-    public readonly float FullLightMod = default;
+    public readonly float FullLightMod = 0;
     public readonly bool GrantsNightVision = false;
     public readonly bool GrantsPhotosensitivity = false;
-    public readonly float ZeroLightMod = default;
+    public readonly float ZeroLightMod = 0;
     public Hediff_LightModifiers LightModifiers;
 
 

@@ -14,10 +14,10 @@ public static class PawnGenUtility
 {
     [NVSettingsDependentField] public static TriBool AnyPSHediffsExist = TriBool.Undefined;
 
-    public static readonly List<string> ManuallyDisallowedHediffs = ["ArchotechEye"];
+    private static readonly List<string> ManuallyDisallowedHediffs = ["ArchotechEye"];
 
 
-    public static List<Hediff_LightModifiers> PSHediffLightMods;
+    private static List<Hediff_LightModifiers> PSHediffLightMods;
 
 
     [NVSettingsDependentField] public static Dictionary<string, PawnKindDef> cachedConvertedPawnKindDefs;
@@ -53,30 +53,26 @@ public static class PawnGenUtility
         return PSHediffLightMods.RandomElementByWeight(lm => Math.Max(lm[0] * 20, 1)).ParentDef as HediffDef;
     }
 
-    public static void IterateFields(object source, object target, Action<Traverse, Traverse> action)
+    private static void IterateFields(object source, object target, Action<Traverse, Traverse> action)
     {
         var sourceTrv = Traverse.Create(source);
         var targetTrv = Traverse.Create(target);
-        AccessTools.GetFieldNames(source).ForEach(
-            f =>
+        AccessTools.GetFieldNames(source).ForEach(f =>
+        {
+            if (AccessTools.Field(source.GetType(), f) is { IsLiteral: true, IsInitOnly: false })
             {
-                if (AccessTools.Field(source.GetType(), f) is { IsLiteral: true, IsInitOnly: false })
-                {
-                }
-                else
-                {
-                    action(sourceTrv.Field(f), targetTrv.Field(f));
-                }
-            });
+            }
+            else
+            {
+                action(sourceTrv.Field(f), targetTrv.Field(f));
+            }
+        });
     }
 
     [NotNull]
     public static PawnKindDef ConvertDefAndStoreOld([NotNull] PawnKindDef original)
     {
-        if (cachedConvertedPawnKindDefs == null)
-        {
-            cachedConvertedPawnKindDefs = new Dictionary<string, PawnKindDef>();
-        }
+        cachedConvertedPawnKindDefs ??= new Dictionary<string, PawnKindDef>();
 
         if (cachedConvertedPawnKindDefs.TryGetValue(original.defName, out var storedPKD))
         {

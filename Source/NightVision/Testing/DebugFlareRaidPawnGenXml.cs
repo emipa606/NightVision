@@ -18,7 +18,7 @@ public class DebugFlareRaidPawnGenXml
 {
     public static pawnGenTrial CurrentTrial;
 
-    public static RaidStrategyDef GetSmart()
+    private static RaidStrategyDef GetSmart()
     {
         foreach (var raidStrategyDef in DefDatabase<RaidStrategyDef>.AllDefs)
         {
@@ -65,9 +65,9 @@ public class DebugFlareRaidPawnGenXml
                 trialData.maxPawnCostMultiplier = SolarRaidGroupMaker.MaxPawnCostMultiplier;
                 trialData.trialID = $"{multi}PawnGenTrial{Rand.Int}";
 
-                var factions = Find.FactionManager.AllFactions.Where(
-                    fac => !fac.def.pawnGroupMakers.NullOrEmpty() && fac.def.humanlikeFaction &&
-                           fac.def.techLevel >= TechLevel.Industrial
+                var factions = Find.FactionManager.AllFactions.Where(fac =>
+                    !fac.def.pawnGroupMakers.NullOrEmpty() && fac.def.humanlikeFaction &&
+                    fac.def.techLevel >= TechLevel.Industrial
                 ).ToList();
 
                 var numTrials = factions.Count;
@@ -105,7 +105,7 @@ public class DebugFlareRaidPawnGenXml
         );
     }
 
-    public static pawnGenTrialTrialGroupGenerated groupGenerated(Faction fac, float points)
+    private static pawnGenTrialTrialGroupGenerated groupGenerated(Faction fac, float points)
     {
         if (points < fac.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Combat))
         {

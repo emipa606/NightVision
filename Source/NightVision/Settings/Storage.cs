@@ -23,23 +23,22 @@ public class Storage
     public HashSet<HediffDef> AllSightAffectingHediffs = [];
     public bool CustomCapsEnabled;
 
-    public Dictionary<HediffDef, Hediff_LightModifiers> HediffLightMods =
-        new Dictionary<HediffDef, Hediff_LightModifiers>();
+    public Dictionary<HediffDef, Hediff_LightModifiers> HediffLightMods = new();
 
-    public FloatRange MultiplierCaps = new FloatRange(
+    public FloatRange MultiplierCaps = new(
         Constants.DEFAULT_MIN_CAP,
         Constants.DEFAULT_MAX_CAP
     );
 
     public bool NullRefWhenLoading;
 
-    public Dictionary<ThingDef, ApparelVisionSetting> NVApparel = new Dictionary<ThingDef, ApparelVisionSetting>();
+    public Dictionary<ThingDef, ApparelVisionSetting> NVApparel = new();
 
-    public bool NVEnabledForCE = true;
+    private bool NVEnabledForCE = true;
 
 
     public Dictionary<ThingDef, Race_LightModifiers>
-        RaceLightMods = new Dictionary<ThingDef, Race_LightModifiers>();
+        RaceLightMods = new();
 
     /// <summary>
     ///     Loads/Saves mod settings (except those relating to combat which have a separate manager)
@@ -87,23 +86,17 @@ public class Storage
         // NVMod or because settings were left as default which we don't save) then we load the default settings
         if (Scribe.mode == LoadSaveMode.LoadingVars)
         {
-            if (LightModifiersBase.PSLightModifiers == null)
+            LightModifiersBase.PSLightModifiers ??= new LightModifiersBase
             {
-                LightModifiersBase.PSLightModifiers = new LightModifiersBase
-                {
-                    Offsets = Constants.PSDefaultOffsets.ToArray(),
-                    Initialised = true
-                };
-            }
+                Offsets = Constants.PSDefaultOffsets.ToArray(),
+                Initialised = true
+            };
 
-            if (LightModifiersBase.NVLightModifiers == null)
+            LightModifiersBase.NVLightModifiers ??= new LightModifiersBase
             {
-                LightModifiersBase.NVLightModifiers = new LightModifiersBase
-                {
-                    Offsets = Constants.NVDefaultOffsets.ToArray(),
-                    Initialised = true
-                };
-            }
+                Offsets = Constants.NVDefaultOffsets.ToArray(),
+                Initialised = true
+            };
         }
 
         // We scribe the Race, Hediff, and Apparel settings using custom scribes. The methods return true if there 

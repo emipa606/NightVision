@@ -13,12 +13,12 @@ namespace NightVision;
 public partial class Initialiser
 
 {
-    public void FindAllValidRaces()
+    private void FindAllValidRaces()
     {
         //Check for compprops so that humanlike req can be overridden in xml
-        var raceDefList = DefDatabase<ThingDef>.AllDefsListForReading.FindAll(
-            rdef => rdef.race is { } race && !rdef.IsCorpse &&
-                    (race.Humanlike || rdef.GetCompProperties<CompProperties_NightVision>() != null)
+        var raceDefList = DefDatabase<ThingDef>.AllDefsListForReading.FindAll(rdef => rdef.race is { } race &&
+            !rdef.IsCorpse &&
+            (race.Humanlike || rdef.GetCompProperties<CompProperties_NightVision>() != null)
         );
         var RaceLightMods =
             Settings.Store.RaceLightMods ?? new Dictionary<ThingDef, Race_LightModifiers>();

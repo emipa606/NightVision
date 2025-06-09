@@ -16,7 +16,7 @@ namespace NightVision;
 [UsedImplicitly]
 public class SolarRaid_IncidentWorker : IncidentWorker_RaidEnemy
 {
-    public static readonly PawnsArrivalModeDef ForcedArriveMode = PawnsArrivalModeDefOf.CenterDrop;
+    private static readonly PawnsArrivalModeDef ForcedArriveMode = PawnsArrivalModeDefOf.CenterDrop;
 
     protected override bool FactionCanBeGroupSource(Faction f, Map map, bool desperate = false)
     {

@@ -22,4 +22,5 @@
   <NightVisionRangedCooldown>Actuellement ({0} allumé, compétence de tir {1}) : {2}</NightVisionRangedCooldown>
   <NightVisionRangedCooldownDemo>A {0} lumière : {1}</NightVisionRangedCooldownDemo>
   <NightVisionAimFactorFromLight>target {0} lit x{1}</NightVisionAimFactorFromLight>
+  <!--Shot tooltip-->
 </LanguageData>

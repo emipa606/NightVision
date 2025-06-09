@@ -57,7 +57,7 @@ public class Mod : Verse.Mod
         base.WriteSettings();
     }
 
-    public void InitSettings()
+    private void InitSettings()
     {
         GetSettings<Settings>();
         Settings.Initialise();

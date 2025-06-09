@@ -13,7 +13,7 @@ namespace NightVision;
 
 public partial class Initialiser
 {
-    public void FindAllValidHediffs()
+    private void FindAllValidHediffs()
     {
         //Essentially we construct two collections: 
         //  the first contains all hediffs that affect sight/are applied to eyes/have our HediffComp_NightVision
@@ -26,44 +26,45 @@ public partial class Initialiser
 
         //Find all hediffs that effect sight
         var allSightAffectingHediffs = new HashSet<HediffDef>(
-            DefDatabase<HediffDef>.AllDefsListForReading.FindAll(
-                hediffdef
-                    => hediffdef.stages != null
-                       && hediffdef.stages.Exists(
-                           stage => stage.capMods != null
-                                    && stage.capMods.Exists(pcm => pcm.capacity == PawnCapacityDefOf.Sight)
-                       )
+            DefDatabase<HediffDef>.AllDefsListForReading.FindAll(hediffdef
+                => hediffdef.stages != null
+                   && hediffdef.stages.Exists(stage => stage.capMods != null
+                                                       && stage.capMods.Exists(pcm =>
+                                                           pcm.capacity == PawnCapacityDefOf.Sight)
+                   )
             )
         );
 
         //Comps: allows for adding Comp_NightVision to hediffdef via xml even if hediffdef does not affect sight
         allSightAffectingHediffs.UnionWith(
-            DefDatabase<HediffDef>.AllDefsListForReading.FindAll(
-                hediffdef => hediffdef.HasComp(typeof(HediffComp_NightVision))
+            DefDatabase<HediffDef>.AllDefsListForReading.FindAll(hediffdef =>
+                hediffdef.HasComp(typeof(HediffComp_NightVision))
             )
         );
 
         //Recipes: only place where the target part is defined for bionic eyes, archotech eyes etc
         var allEyeHediffs = new HashSet<HediffDef>(
-            DefDatabase<RecipeDef>.AllDefsListForReading.FindAll(
-                recdef => recdef.addsHediff != null
-                          && recdef.appliedOnFixedBodyParts != null
-                          && recdef.appliedOnFixedBodyParts.Exists(
-                              bpd => bpd.tags != null && bpd.tags.Contains(Defs_Rimworld.EyeTag)
-                          )
-                          && recdef.AllRecipeUsers.Any(ru => ru.race?.Humanlike == true)
+            DefDatabase<RecipeDef>.AllDefsListForReading.FindAll(recdef => recdef.addsHediff != null
+                                                                           && recdef.appliedOnFixedBodyParts != null
+                                                                           && recdef.appliedOnFixedBodyParts
+                                                                               .Exists(bpd =>
+                                                                                   bpd.tags != null &&
+                                                                                   bpd.tags.Contains(Defs_Rimworld
+                                                                                       .EyeTag)
+                                                                               )
+                                                                           && recdef.AllRecipeUsers.Any(ru =>
+                                                                               ru.race?.Humanlike == true)
             ).Select(recdef => recdef.addsHediff)
         );
 
         //HediffGivers: i.e. cataracts from HediffGiver_Birthday
         allEyeHediffs.UnionWith(
-            DefDatabase<HediffGiverSetDef>.AllDefsListForReading.FindAll(hgsd => hgsd.hediffGivers != null).SelectMany(
-                hgsd => hgsd.hediffGivers
-                    .Where(
-                        hg => hg.partsToAffect != null
-                              && hg.partsToAffect.Exists(bpd => bpd.tags.Contains(Defs_Rimworld.EyeTag))
+            DefDatabase<HediffGiverSetDef>.AllDefsListForReading.FindAll(hgsd => hgsd.hediffGivers != null)
+                .SelectMany(hgsd => hgsd.hediffGivers
+                    .Where(hg => hg.partsToAffect != null
+                                 && hg.partsToAffect.Exists(bpd => bpd.tags.Contains(Defs_Rimworld.EyeTag))
                     ).Select(hg => hg.hediff)
-            )
+                )
         );
 
 

@@ -11,24 +11,24 @@ namespace NightVision;
 
 public class CombatTab
 {
-    public readonly float IntSliderHeight = 28f;
+    private readonly float IntSliderHeight = 28f;
 
-    public readonly float LineHeight = Text.LineHeight;
+    private readonly float LineHeight = Text.LineHeight;
 
-    public readonly float texRextXMod = 6f;
+    private readonly float texRextXMod = 6f;
 
-    public readonly float texRextYMod = 24f;
-    public readonly float VerticalSpacing = 2f;
-    public string[] bestAndWorstRangedCd = new string[2];
+    private readonly float texRextYMod = 24f;
+    private readonly float VerticalSpacing = 2f;
+    private string[] bestAndWorstRangedCd = new string[2];
 
-    public float MeleeSubListingHeight = 100f;
+    private float MeleeSubListingHeight = 100f;
 
-    public float RangedSubListingHeight = 100f;
+    private float RangedSubListingHeight = 100f;
 
     public string surpBuffer;
 
 
-    public string[] BestAndWorstRangedCd
+    private string[] BestAndWorstRangedCd
     {
         get
         {
@@ -182,7 +182,7 @@ public class CombatTab
         bestAndWorstRangedCd = new string[2];
     }
 
-    public void CheckIntRange(ref IntRange range, int mustInclude)
+    private void CheckIntRange(ref IntRange range, int mustInclude)
     {
         if (range.TrueMax != range.max)
         {

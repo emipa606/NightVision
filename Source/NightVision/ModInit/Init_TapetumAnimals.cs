@@ -20,7 +20,7 @@ public partial class Initialiser
 
     //Try to dynamically inject tapetum into large predators ensuring coverage of as many biomes as possible
     //Fallsback to adding to the same animals as vanilla rimworld
-    public void AddTapetumRecipeToAnimals()
+    private void AddTapetumRecipeToAnimals()
     {
         var bestAnimals = new List<ThingDef>();
         var tapetumResearch = ResearchProjectDef.Named("TapetumImplant");
@@ -44,8 +44,8 @@ public partial class Initialiser
                     continue;
                 }
 
-                var bestAnimal = possibleAnimals.Aggregate(
-                    (best, next) => best.RaceProps.baseBodySize > next.RaceProps.baseBodySize ? best : next
+                var bestAnimal = possibleAnimals.Aggregate((best, next) =>
+                    best.RaceProps.baseBodySize > next.RaceProps.baseBodySize ? best : next
                 ).race;
 
                 bestAnimals.AddDistinct(bestAnimal);

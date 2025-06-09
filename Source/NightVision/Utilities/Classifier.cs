@@ -37,10 +37,7 @@ public static class Classifier
 
         if (isZeroLightMod)
         {
-            if (ZeroLightTurningPoints == null)
-            {
-                ZeroLightTurningPoints = OffsetsList(true);
-            }
+            ZeroLightTurningPoints ??= OffsetsList(true);
 
             if (ZeroLightTurningPoints.Count == 0
                 || modifier + Constants.NV_EPSILON < ZeroLightTurningPoints[0])
@@ -53,10 +50,7 @@ public static class Classifier
                 : VisionType.NVPhotosensitivity;
         }
 
-        if (FullLightTurningPoint == null)
-        {
-            FullLightTurningPoint = OffsetsList(false);
-        }
+        FullLightTurningPoint ??= OffsetsList(false);
 
         if (FullLightTurningPoint.Count == 0
             || modifier - Constants.NV_EPSILON > FullLightTurningPoint[0])
