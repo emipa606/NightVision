@@ -47,12 +47,13 @@ public class DebugFlareRaidPawnGen
                     }
 
                     var originalPoints = points;
+                    var tile = Find.CurrentMap.Tile;
                     points = IncidentWorker_Raid.AdjustedRaidPoints(points, PawnsArrivalModeDefOf.CenterDrop,
-                        RaidStrategyDefOf.ImmediateAttack, fac, PawnGroupKindDefOf.Combat);
+                        RaidStrategyDefOf.ImmediateAttack, fac, PawnGroupKindDefOf.Combat, Find.CurrentMap);
                     var pawnGroupMakerParms = new PawnGroupMakerParms
                     {
                         groupKind = PawnGroupKindDefOf.Combat,
-                        tile = Find.CurrentMap.Tile,
+                        tile = tile,
                         points = points,
                         faction = fac,
                         raidStrategy = RaidStrategyDefOf.ImmediateAttack

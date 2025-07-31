@@ -7,6 +7,12 @@
     " photosensitivity",
     "night vision"
   ],
-  "PreviewVersion": "1.5",
-  "LastXmlCleaning": "2025-06-09T21:42:38.072761+02:00"
+  "PreviewVersion": "1.6",
+  "LastXmlCleaning": "2025-07-31T18:13:48.715011+02:00",
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 311377,
+  "LinesOfXML": 27048,
+  "CodeBaseSize": 87
 }

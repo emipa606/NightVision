@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: retro-reflector eye implant -->
+  <NV_TapetumImplant.label>retro-reflector eye implant</NV_TapetumImplant.label>
+  <!-- EN: An organic implant that enhances night vision but reduces effectiveness in bright light. -->
+  <NV_TapetumImplant.description>An organic implant that enhances night vision but reduces effectiveness in bright light.</NV_TapetumImplant.description>
+  <!-- EN: extracted tapetum lucidum -->
+  <NV_TapetumRaw.label>extracted tapetum lucidum</NV_TapetumRaw.label>
+  <!-- EN: An extracted tapetum lucidum - the organ responsible for night vision in many mammals. With some work this could be fashioned into an implant suitable for humanoids. -->
+  <NV_TapetumRaw.description>An extracted tapetum lucidum - the organ responsible for night vision in many mammals. With some work this could be fashioned into an implant suitable for humanoids.</NV_TapetumRaw.description>
+</LanguageData>

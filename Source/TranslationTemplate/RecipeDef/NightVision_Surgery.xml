@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: extract tapetum lucidum -->
+  <ExtractTapetumLucidum.label>extract tapetum lucidum</ExtractTapetumLucidum.label>
+  <!-- EN: Extract the tapetum lucidum; an organ that lies behind the eye and is responsible for night vision. -->
+  <ExtractTapetumLucidum.description>Extract the tapetum lucidum; an organ that lies behind the eye and is responsible for night vision.</ExtractTapetumLucidum.description>
+  <!-- EN: Extracting tapetum lucidum. -->
+  <ExtractTapetumLucidum.jobString>Extracting tapetum lucidum.</ExtractTapetumLucidum.jobString>
+  <!-- EN: implant retro-reflector -->
+  <NV_InstallTapetum.label>implant retro-reflector</NV_InstallTapetum.label>
+  <!-- EN: Implant a retinal retro-reflector -->
+  <NV_InstallTapetum.description>Implant a retinal retro-reflector</NV_InstallTapetum.description>
+  <!-- EN: entering the optic cavity -->
+  <NV_InstallTapetum.jobString>entering the optic cavity</NV_InstallTapetum.jobString>
+</LanguageData>

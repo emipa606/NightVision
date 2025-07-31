@@ -18,8 +18,10 @@ public class SolarRaid_IncidentWorker : IncidentWorker_RaidEnemy
 {
     private static readonly PawnsArrivalModeDef ForcedArriveMode = PawnsArrivalModeDefOf.CenterDrop;
 
-    protected override bool FactionCanBeGroupSource(Faction f, Map map, bool desperate = false)
+    public override bool FactionCanBeGroupSource(Faction f, IncidentParms parms, bool desperate = false)
     {
+        var map = (Map)parms.target;
+
         return !f.IsPlayer
                && !f.defeated
                && (desperate
@@ -32,10 +34,8 @@ public class SolarRaid_IncidentWorker : IncidentWorker_RaidEnemy
 
     protected override bool CanFireNowSub(IncidentParms parms)
     {
-        var map = (Map)parms.target;
-
         return Find.World.GameConditionManager.ConditionIsActive(Defs_Rimworld.SolarFlare)
-               && (parms.faction != null || CandidateFactions(map).Any());
+               && (parms.faction != null || CandidateFactions(parms).Any());
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)
@@ -64,7 +64,8 @@ public class SolarRaid_IncidentWorker : IncidentWorker_RaidEnemy
             parms.raidArrivalMode,
             parms.raidStrategy,
             parms.faction,
-            combat
+            combat,
+            parms.target as Map
         );
 
         var defaultPawnGroupMakerParms = IncidentParmsUtility.GetDefaultPawnGroupMakerParms(
@@ -189,7 +190,7 @@ public class SolarRaid_IncidentWorker : IncidentWorker_RaidEnemy
         return PawnGroupMakerUtility.TryGetRandomFactionForCombatPawnGroup(
                    num,
                    out parms.faction,
-                   f => FactionCanBeGroupSource(f, map),
+                   f => FactionCanBeGroupSource(f, parms),
                    false,
                    true,
                    true,
@@ -198,7 +199,7 @@ public class SolarRaid_IncidentWorker : IncidentWorker_RaidEnemy
                || PawnGroupMakerUtility.TryGetRandomFactionForCombatPawnGroup(
                    num,
                    out parms.faction,
-                   f => FactionCanBeGroupSource(f, map, true),
+                   f => FactionCanBeGroupSource(f, parms, true),
                    false,
                    true,
                    true,

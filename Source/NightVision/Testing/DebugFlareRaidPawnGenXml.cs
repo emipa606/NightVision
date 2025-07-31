@@ -119,7 +119,8 @@ public class DebugFlareRaidPawnGenXml
             PawnsArrivalModeDefOf.CenterDrop,
             GetSmart(),
             fac,
-            PawnGroupKindDefOf.Combat
+            PawnGroupKindDefOf.Combat,
+            Find.CurrentMap
         );
 
         groupGen.modifiedPoints = points;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: too bright -->
+  <EnvironmentBright.stages.too_bright.label>too bright</EnvironmentBright.stages.too_bright.label>
+  <!-- EN: Ugh...could someone please dismantle the sun? -->
+  <EnvironmentBright.stages.too_bright.description>Ugh...could someone please dismantle the sun?</EnvironmentBright.stages.too_bright.description>
+</LanguageData>

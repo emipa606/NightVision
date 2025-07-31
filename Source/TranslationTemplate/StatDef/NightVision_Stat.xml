@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: current light multiplier -->
+  <LightMultiplier.label>current light multiplier</LightMultiplier.label>
+  <!-- EN: This character's current light multiplier. Effects work speed, move speed, and various combat stats.\nFor animals and mechanoids, this is 100% at all light levels.\nFor humanlikes, this is 100% between 30% and 70% light, above that depends on photosensitivity (default = 100%) and below that depends on night vision (default = 80%). -->
+  <LightMultiplier.description>This character's current light multiplier. Effects work speed, move speed, and various combat stats.
+For animals and mechanoids, this is 100% at all light levels.
+For humanlikes, this is 100% between 30% and 70% light, above that depends on photosensitivity (default = 100%) and below that depends on night vision (default = 80%).</LightMultiplier.description>
+  <!-- EN: x{0:0.0%} -->
+  <LightMultiplier.formatString>x{0:0.0%}</LightMultiplier.formatString>
+  <!-- EN: Bright multiplier -->
+  <LightSensitivity.label>Bright multiplier</LightSensitivity.label>
+  <!-- EN: The light multiplier when in bright light ( > 70% light ).\n      Effects work speed, move speed, and various combat stats.\n      Reaches the peak value listed here at 100% light.\n      Generally affected by photosensitivity granting health conditions and races. Debuff is nullified by certain apparel. -->
+  <LightSensitivity.description>The light multiplier when in bright light ( > 70% light ).
+      Effects work speed, move speed, and various combat stats.
+      Reaches the peak value listed here at 100% light.
+      Generally affected by photosensitivity granting health conditions and races. Debuff is nullified by certain apparel.</LightSensitivity.description>
+  <!-- EN: x{0:0%} -->
+  <LightSensitivity.formatString>x{0:0%}</LightSensitivity.formatString>
+  <!-- EN: Darkness multiplier -->
+  <NightVision.label>Darkness multiplier</NightVision.label>
+  <!-- EN: The light multiplier when in darkness ( < 30% light ).\n      Effects work speed, move speed, and various combat stats.\n      Reaches the peak value listed here at 0% light.\n      Generally affected by both night vision and photosensitivity granting health conditions, apparel, and races. -->
+  <NightVision.description>The light multiplier when in darkness ( &lt; 30% light ).
+      Effects work speed, move speed, and various combat stats.
+      Reaches the peak value listed here at 0% light.
+      Generally affected by both night vision and photosensitivity granting health conditions, apparel, and races.</NightVision.description>
+  <!-- EN: x{0:0.0%} -->
+  <NightVision.formatString>x{0:0.0%}</NightVision.formatString>
+  <!-- EN: combat effects from light -->
+  <NightVisionCombat.label>combat effects from light</NightVisionCombat.label>
+  <!-- EN: A summary of the effects of light on combat stats. -->
+  <NightVisionCombat.description>A summary of the effects of light on combat stats.</NightVisionCombat.description>
+  <!-- EN: ranged cooldown -->
+  <NVRangedCooldown.label>ranged cooldown</NVRangedCooldown.label>
+  <!-- EN: The ranged cooldown multiplier due to light. Affected by shooting skill and light multiplier. Higher is worse. -->
+  <NVRangedCooldown.description>The ranged cooldown multiplier due to light. Affected by shooting skill and light multiplier. Higher is worse.</NVRangedCooldown.description>
+  <!-- EN: x{0:0%} -->
+  <NVRangedCooldown.formatString>x{0:0%}</NVRangedCooldown.formatString>
+</LanguageData>

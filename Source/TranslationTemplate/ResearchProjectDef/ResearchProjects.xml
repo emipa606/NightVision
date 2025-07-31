@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Retro-reflector Implant -->
+  <TapetumImplant.label>Retro-reflector Implant</TapetumImplant.label>
+  <!-- EN: Extract an appropriately sized animal's tapetum lucidum and craft it into an implant suitable for humanoids at the drug lab. \nThis eye implant grants the host a large movement speed and work speed bonus while in darkness.\nA tapetum lucidum can be bought from some traders, or extracted from:\n - Grizzly bear\n - Polar bear\n - Tiger\n - Alligator\n - Warg -->
+  <TapetumImplant.description>Extract an appropriately sized animal's tapetum lucidum and craft it into an implant suitable for humanoids at the drug lab. 
+This eye implant grants the host a large movement speed and work speed bonus while in darkness.
+A tapetum lucidum can be bought from some traders, or extracted from:
+ - Grizzly bear
+ - Polar bear
+ - Tiger
+ - Alligator
+ - Warg</TapetumImplant.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: retro-reflector implant -->
+  <NV_TapetumPart.label>retro-reflector implant</NV_TapetumPart.label>
+  <!-- EN: An organic retro-reflector implanted behind the retina to aid in light capture -->
+  <NV_TapetumPart.description>An organic retro-reflector implanted behind the retina to aid in light capture</NV_TapetumPart.description>
+  <!-- EN: a retinal retro-reflector implant -->
+  <NV_TapetumPart.labelNoun>a retinal retro-reflector implant</NV_TapetumPart.labelNoun>
+</LanguageData>

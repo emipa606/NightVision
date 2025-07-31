@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 496697816
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ec0a9df90d5402f1ea113c5abbe2ad0b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ec0a9df90d5402f1ea113c5abbe2ad0b
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv2.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/tintedgoggles.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv2_north.png
+- Assets/Data/Mlie.NightVision/Textures/UI/Indicators/PSarrow.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/tintedgoggles_east.png
+- Assets/Data/Mlie.NightVision/Textures/Things_Misc/HealthItem_TapetumRaw.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv1_north.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv1_south.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv1.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv2_south.png
+- Assets/Data/Mlie.NightVision/Textures/UI/Indicators/NVarrow.png
+- Assets/Data/Mlie.NightVision/Textures/UI/Indicators/DefaultArrow.png
+- Assets/Data/Mlie.NightVision/Textures/Things_Misc/HealthItem_TapetumImplant.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/tintedgoggles_north.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/tintedgoggles_south.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv1_east.png
+- Assets/Data/Mlie.NightVision/Textures/Apparel/nvgogglesv2_east.png
+Dependencies: []

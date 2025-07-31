@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: advanced night vision helmet -->
+  <NV_adv_helmet.label>advanced night vision helmet</NV_adv_helmet.label>
+  <!-- EN: Based on the standard recon helmet but with some of the armour plating replaced by a visor that both augments the wearer's night vision and provides dynamic tinting in bright light. -->
+  <NV_adv_helmet.description>Based on the standard recon helmet but with some of the armour plating replaced by a visor that both augments the wearer's night vision and provides dynamic tinting in bright light.</NV_adv_helmet.description>
+  <!-- EN: night vision goggles -->
+  <NV_nv_goggles.label>night vision goggles</NV_nv_goggles.label>
+  <!-- EN: A pair of nightvision goggles with an adjustable strap to ensure they cover the eyes, not the mouth. -->
+  <NV_nv_goggles.description>A pair of nightvision goggles with an adjustable strap to ensure they cover the eyes, not the mouth.</NV_nv_goggles.description>
+  <!-- EN: tinted goggles -->
+  <NV_tinted_goggles.label>tinted goggles</NV_tinted_goggles.label>
+  <!-- EN: Provide excellent protection from any light brighter than 70 rw candela. Certified by all popular joywire artists. May inflate ego. -->
+  <NV_tinted_goggles.description>Provide excellent protection from any light brighter than 70 rw candela. Certified by all popular joywire artists. May inflate ego.</NV_tinted_goggles.description>
+</LanguageData>
