@@ -17,7 +17,8 @@ public class NVStatWorker_RangedCooldown : NVStatWorker
 
     public override string GetExplanationUnfinalized(StatRequest req, ToStringNumberSense numberSense)
     {
-        if (req.Thing is not Pawn pawn || ModLister.BiotechInstalled && pawn.genes.HasActiveGene(DarkVision))
+        if (req.Thing is not Pawn pawn ||
+            ModLister.BiotechInstalled && pawn.genes != null && pawn.genes.HasActiveGene(DarkVision))
         {
             return string.Empty;
         }
@@ -35,7 +36,8 @@ public class NVStatWorker_RangedCooldown : NVStatWorker
 
     public override float GetValueUnfinalized(StatRequest req, bool applyPostProcess = true)
     {
-        if (req.Thing is not Pawn pawn || ModLister.BiotechInstalled && pawn.genes.HasActiveGene(DarkVision))
+        if (req.Thing is not Pawn pawn ||
+            ModLister.BiotechInstalled && pawn.genes != null && pawn.genes.HasActiveGene(DarkVision))
         {
             return Constants.TRIVIAL_FACTOR;
         }
@@ -49,7 +51,8 @@ public class NVStatWorker_RangedCooldown : NVStatWorker
 
     public override bool IsDisabledFor(Thing thing)
     {
-        return base.IsDisabledFor(thing) || !(thing is Pawn pawn && !pawn.skills.GetSkill(DerivedFrom).TotallyDisabled);
+        return base.IsDisabledFor(thing) ||
+               !(thing is Pawn pawn && !pawn.skills?.GetSkill(DerivedFrom).TotallyDisabled == true);
     }
 
     public override bool ShouldShowFor(StatRequest req)

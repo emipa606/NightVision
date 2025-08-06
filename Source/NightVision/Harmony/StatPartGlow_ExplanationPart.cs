@@ -15,7 +15,7 @@ public static class StatPartGlow_ExplanationPart
         if (__result.NullOrEmpty()
             || req.Thing is not Pawn pawn
             || pawn.TryGetComp<Comp_NightVision>() is not { } comp
-            || ModLister.BiotechInstalled && pawn.genes.HasActiveGene(NVStatWorker.DarkVision))
+            || ModLister.BiotechInstalled && pawn.genes != null && pawn.genes.HasActiveGene(NVStatWorker.DarkVision))
         {
             return;
         }

@@ -1,34 +1,36 @@
-# GitHub Copilot Instructions for RimWorld Modding Project
+# Copilot Instructions for NightVision (Continued)
 
 ## Mod Overview and Purpose
-This RimWorld mod is designed to enhance and tweak various aspects of AI combat behavior and vision mechanics within the game. It introduces nuanced systems for night vision and modifies AI combat routines to create a more dynamic gameplay experience. The mod leverages C# for most of its logic, while extensive use of XML facilitates integration within the RimWorld framework.
+NightVision (Continued) is an enhancement and continuation of the original NightVision mod by drumads. Its core goal is to introduce mechanics that empower and challenge your colonists in dim light and dark environments, leveraging night vision and photosensitivity to alter gameplay dynamics significantly.
 
 ## Key Features and Systems
-- **AI Combat Enhancements**: Modifications to AI combat behaviors to improve tactical decision-making.
-- **Night Vision System**: Introduces night vision capabilities, affecting both pawn perception and apparel properties.
-- **Custom Light Modifiers**: Provides mechanisms to adjust light modifiers that affect game mechanics like sight and combat effectiveness.
-- **Solar Raid Events**: Special raid mechanics and events tied to solar activity.
-- **Comprehensive Apparel and Hediff System**: Dynamic handling of apparel and health conditions (hediffs) that influence gameplay.
+- **Night Vision Mechanics**: Eliminate slowdowns in darkness and negate negative thoughts associated with dim environments.
+- **Photosensitivity Effects**: Faster operations in darkness, slower ones in bright light, with corresponding mood effects.
+- **New Apparel and Bionics**: Includes items like night vision goggles and advanced helmets, along with bionic eyes providing night vision traits.
+- **Alien Races Support**: Modify alien race traits to incorporate photosensitivity.
+- **Customizable Settings**: Modify headgear effects and bionic implants to adjust night vision features.
+- **Combat Enhancements**: Night vision and photosensitivity now affect hit chance, cooldowns, dodge chances, and can trigger sneak attacks.
+- **Strategic Gameplay Changes**: Enemies prefer dark cover and have adjusted aggro ranges based on their vision capabilities.
+- **New Raid Mechanic**: Introduces late-game night raids with solar flares affecting melee specialist encounters.
 
 ## Coding Patterns and Conventions
-- **Static Helper Classes**: Used extensively for utility functions (e.g., `CombatHelpers`, `PawnGenUtility`).
-- **Partial Classes for Initialization**: The `Initialiser` class is split into partial classes for modular initialization of various game aspects like hediffs, apparel, and races.
-- **Use of Interfaces**: Interfaces like `IExposable` and `ISaveCheck` ensure proper data exposure and save-check functionality.
+- **Class Naming**: Classes are generally named with a clear prefix indicating their purpose (e.g., `Comp_NightVision`, `NVGameComponent`). Utilize PascalCase for class names and methods.
+- **Namespaces and Organisation**: Code is structured into static classes for utility (`CombatHelpers`) and derived classes for specific functionality (`Comp_NightVision`).
+- **Methods**: Follow a consistent naming convention with verbs leading (e.g., `SetDirty`, `RemoveHediff`) using camelCase.
 
 ## XML Integration
-- **Defs Integration**: The mod utilizes XML for defining various game elements and integrating them into RimWorld. This includes configurations for night vision and other modified elements.
-- **Mod Extensions**: Custom XML definitions extend standard game mechanics, allowing for seamless integration of new features.
+- XML patches are utilized to integrate mod components with RimWorld's core game structures. Be aware of how XML definitions relate to in-game elements.
+- Example patches are included in the mod for extending support to other mods or custom configurations.
+- XML files are used to define items, their attributes, and how they interact with mod components.
 
 ## Harmony Patching
-- The mod uses [Harmony](https://harmony.pardeike.net/) for runtime method patching to alter game behavior without directly modifying the base game code.
-- **Harmony Setup**: The `NVHarmonyPatcher` class is responsible for setting up all Harmony patches used by the mod.
-- **Patch Locations**: Specific methods related to AI and combat are targeted for patching to refine gameplay dynamics.
+- **Harmony**: This mod integrates Harmony to patch RimWorld methods for expanded functionality.
+- **Patch Locations**: Several static classes indicate where Harmony patches are applied (e.g., `PawnHealthTracker_AddHediff`, `StatPartGlow_FactorFromGlow`).
 
 ## Suggestions for Copilot
-- **Generate Utility Functions**: Copilot can assist in writing utility functions by detecting patterns in existing helper classes and extending their capabilities.
-- **Create XML Templates**: Automatic generation of XML templates for new defs can streamline the integration of additional features.
-- **Streamline Initialization Routines**: Propose improvements to static initialization routines to enhance modularity and maintainability.
-- **Harmony Patch Design**: Suggest potential Harmony patches by analyzing current method usages and proposing alternative or optimized implementations.
-- **Dynamic Gameplay Adjustments**: Recommend gameplay adjustments based on observed interactions and existing modifiers.
+- **Code Completions**: Utilize Copilot for repetitive code patterns, especially in generating getters/setters or simple utility functions.
+- **Harmony Integration**: Leverage Copilot to draft Harmony patching methods by identifying target method signatures in RimWorld's library.
+- **XML Guidance**: Use Copilot to suggest XML configurations based on examples provided to ensure compatibility with RimWorld’s XML structure.
+- **Refactor Suggestions**: Seek suggestions to ensure that repetitive logic is extracted into helper methods and constants are used to avoid magic numbers.
 
-This document serves as a guide for utilizing GitHub Copilot efficiently in the development process of this RimWorld mod. It highlights the core aspects of the mod and provides directions for enhancing development workflows using AI-assisted capabilities.
+For further details on contributing or extending the mod, please consult the included source files and examples within the repository. Also, refer to the original mod documentation and any additional community guides for RimWorld modding best practices.

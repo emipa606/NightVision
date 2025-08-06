@@ -24,7 +24,7 @@ public class NVStatWorker : StatWorker
     )
     {
         if (req.Thing is Pawn pawn && pawn.TryGetComp<Comp_NightVision>() is { } comp &&
-            (!ModLister.BiotechInstalled || !pawn.genes.HasActiveGene(DarkVision)))
+            (!ModLister.BiotechInstalled || pawn.genes == null || !pawn.genes.HasActiveGene(DarkVision)))
         {
             return StatReportFor_NightVision.CompleteStatReport(Stat, StatEffectMask, comp, Glow);
         }
@@ -53,7 +53,7 @@ public class NVStatWorker : StatWorker
     )
     {
         if (req.Thing is Pawn pawn && pawn.TryGetComp<Comp_NightVision>() is { } comp &&
-            (!ModLister.BiotechInstalled || !pawn.genes.HasActiveGene(DarkVision)))
+            (!ModLister.BiotechInstalled || pawn.genes == null || !pawn.genes.HasActiveGene(DarkVision)))
         {
             return comp.FactorFromGlow(Glow);
         }
@@ -64,7 +64,7 @@ public class NVStatWorker : StatWorker
     public override bool IsDisabledFor(Thing thing)
     {
         return thing is not Pawn pawn || pawn.TryGetComp<Comp_NightVision>() == null ||
-               ModLister.BiotechInstalled && pawn.genes.HasActiveGene(DarkVision);
+               ModLister.BiotechInstalled && pawn.genes != null && pawn.genes.HasActiveGene(DarkVision);
     }
 
     public override bool ShouldShowFor(StatRequest req)
@@ -75,39 +75,5 @@ public class NVStatWorker : StatWorker
     public override string GetExplanationFinalizePart(StatRequest req, ToStringNumberSense numberSense, float finalVal)
     {
         return "";
-
-        //StringBuilder stringBuilder = new StringBuilder();
-        //if (this.stat.parts != null)
-        //{
-        //    for (int index = 0; index < this.stat.parts.Count; ++index)
-        //    {
-        //        string str = this.stat.parts[index].ExplanationPart(req);
-        //        if (!str.NullOrEmpty())
-        //        {
-        //            stringBuilder.AppendLine(str);
-        //            stringBuilder.AppendLine();
-        //        }
-        //    }
-        //}
-        //if (this.stat.postProcessCurve != null)
-        //{
-        //    float num1 = this.GetValue(req, false);
-        //    float num2 = this.GetValue(req, true);
-        //    if (!Mathf.Approximately(num1, num2))
-        //    {
-        //        string str1 = this.ValueToString(num1, false, ToStringNumberSense.Absolute);
-        //        string str2 = this.stat.ValueToString(num2, numberSense);
-        //        stringBuilder.AppendLine("StatsReport_PostProcessed".Translate() + ": " + str1 + " => " + str2);
-        //        stringBuilder.AppendLine();
-        //    }
-        //}
-        //float statFactor = Find.Scenario.GetStatFactor(this.stat);
-        //if ((double) statFactor != 1.0)
-        //{
-        //    stringBuilder.AppendLine("StatsReport_ScenarioFactor".Translate() + ": " + statFactor.ToStringPercent());
-        //    stringBuilder.AppendLine();
-        //}
-        //stringBuilder.Append("StatsReport_FinalValue".Translate() + ": " + this.stat.ValueToString(finalVal, this.stat.toStringNumberSense));
-        //return stringBuilder.ToString();
     }
 }
