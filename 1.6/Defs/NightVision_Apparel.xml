@@ -5,6 +5,11 @@
     <label>tinted goggles</label>
     <description>Provide excellent protection from any light brighter than 70 rw candela. Certified by all popular joywire artists. May inflate ego.</description>
     <techLevel>Industrial</techLevel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>Clothing</li>
+      <li>Armor</li>
+    </tradeTags>
     <graphicData>
       <texPath>Apparel/tintedgoggles</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -83,6 +88,11 @@
     <label>night vision goggles</label>
     <description>A pair of nightvision goggles with an adjustable strap to ensure they cover the eyes, not the mouth.</description>
     <techLevel>Industrial</techLevel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>Clothing</li>
+      <li>Armor</li>
+    </tradeTags>
     <recipeMaker>
       <skillRequirements>
         <Crafting>6</Crafting>
@@ -148,6 +158,11 @@
     <label>advanced night vision helmet</label>
     <description>Based on the standard recon helmet but with some of the armour plating replaced by a visor that both augments the wearer's night vision and provides dynamic tinting in bright light.</description>
     <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>Clothing</li>
+      <li>Armor</li>
+    </tradeTags>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisite>PoweredArmor</researchPrerequisite>

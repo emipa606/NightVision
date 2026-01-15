@@ -1,5 +1,8 @@
 # Changelog for NightVision
 
+1.6.2 - All apparel is sellable now
+
+
 1.6.1 - Fixed animal infocard issue
 
 
